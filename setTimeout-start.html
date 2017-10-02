@@ -17,9 +17,10 @@
 			(2) console.log(this) inside the Promise and observe the results.
 			(3) Make sure wait returns the Promise too!
 			 */
+
 			 return new Promise((resolve) => {
-				 console.log(this);
-				window.setTimeout(function() {
+				console.log(this);
+				window.setTimeout(() => {
 					resolve();
 				}, ms);
 			 });
@@ -29,13 +30,13 @@
 		Uncomment these lines when you want to test!
 		You'll know you've done it right when the message on the page changes.
 		 */
-		var milliseconds = 2000;
+		let milliseconds = 2000;
 		wait(milliseconds).then(finish);
 
 
 		// This is just here to help you test.
 		function finish() {
-			var completion = document.querySelector('.completion');
+			let completion = document.querySelector('.completion');
 			completion.innerHTML = "Complete after " + milliseconds + "ms.";
 		};
 	</script>
