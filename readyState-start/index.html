@@ -35,12 +35,15 @@
 
 			Make sure you return the Promise!
 			 */
+
 			return new Promise(resolve => {
-				document.addEventListener('readystatechange', function () {
+				function checkState() {
 					if (document.readyState !== 'loading') {
 						resolve();
 					}
-				});
+				}
+				document.addEventListener('readystatechange', checkState);
+				checkState();
 			});
 
 		};
